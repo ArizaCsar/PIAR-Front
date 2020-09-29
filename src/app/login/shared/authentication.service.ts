@@ -1,8 +1,8 @@
-import {Injectable} from "@angular/core";
+import { Injectable } from "@angular/core";
 /* import {Http, Response} from "@angular/common/http"; */
-import {Observable} from "rxjs";
-import {LoginObject} from "./login-object.model";
-import {Session} from "../../models/session.model";
+import { Observable } from "rxjs";
+import { LoginObject } from "./login-object.model";
+import { Session } from "../../models/session.model";
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
@@ -10,20 +10,20 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class AuthenticationService {
 
- constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
- private basePath = 'http://127.0.0.1:8000';
+  private basePath = 'http://127.0.0.1:8000/api/';
 
- login(loginObj: LoginObject): Observable<Session> {
-    return this.http.post(this.basePath + 'login', loginObj).pipe(map(this.extractData));
-    }
+  login(loginObj: LoginObject): Observable<Session> {
+    return this.http.post<Session>(this.basePath + 'login', loginObj);
+  }
 
- logout(): Observable<Boolean> {
-    return this.http.post(this.basePath + 'logout', {}).pipe(map(this.extractData));
-    }
+  logout(): Observable<boolean> {
+    return this.http.post<boolean>(this.basePath + 'logout', {});
+  }
 
- private extractData(res: Response) {
- let body = res.json();
- return body;
- }
+  private extractData(res: Response) {
+    let body = res.json();
+    return body;
+  }
 }

@@ -4,9 +4,7 @@ import { HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule, routing } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EncabezadoComponent } from './encabezado/encabezado.component';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 
 
@@ -14,9 +12,7 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    EncabezadoComponent,
-    LoginComponent,
-    RegisterComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
