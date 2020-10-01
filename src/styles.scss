@@ -22,3 +22,32 @@ body { margin: 0; }
         color: #fff !important;
     }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.template-container {
+  mat-form-field {
+    // margin-right: 12px;
+  }
+
+}
+
+.grid-1 {
+  width: 100%;
+}
+
+.grid-2 {
+  width: 49%;
+  margin: 0 0.34%;
+}
+
+.grid-3 {
+  width: 32%;
+  margin: 0 0.667%;
+}
+
+.grid-4 {
+  width: 24%;
+  margin: 0.5%;
+}

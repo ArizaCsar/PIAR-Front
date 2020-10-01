@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../login/shared/authentication.service';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-plantilla',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlantillaComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private storageService: StorageService) { }
 
   ngOnInit(): void {
+  }
+
+  public logout(): void{
+      this.storageService.logout();
   }
 
 }

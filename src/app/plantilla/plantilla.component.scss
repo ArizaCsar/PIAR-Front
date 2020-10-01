@@ -1,0 +1,12 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.template-container {
+  width: 80%;
+  margin: 20px auto 30px;
+}
+
+::ng-deep .template-container .mat-card {
+  margin-top: 20px;
+}

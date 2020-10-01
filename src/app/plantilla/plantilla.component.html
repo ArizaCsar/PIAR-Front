@@ -1,2 +1,13 @@
-<p>plantilla works!</p>
-<ng-content></ng-content>
+<mat-toolbar color="primary">
+ <span>PIAR</span>
+ <span class="example-spacer"></span>
+ <a mat-button [routerLink]="['/plantilla1']">Plantilla 1</a>
+ <a mat-button [routerLink]="['/plantilla2']">Plantilla 2</a>
+ <a mat-button [routerLink]="['/plantilla3']">Plantilla 3</a>
+ <button title="Cerrar sesión" mat-icon-button (click)="logout()">
+  <mat-icon>exit_to_app</mat-icon>
+</button>
+</mat-toolbar>
+<div class="template-container">
+  <ng-content></ng-content>
+</div>

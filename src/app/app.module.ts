@@ -13,7 +13,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
 
 import { AuthenticationService } from './login/shared/authentication.service';
@@ -21,6 +25,10 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { StorageService } from './services/storage.service';
 import { PlantillaComponent } from './plantilla/plantilla.component';
+import { AuthorizatedGuard } from './core/guards/authorizated.guard';
+import { Plantilla1Component } from './plantillas/plantilla1/plantilla1.component';
+import { Plantilla2Component } from './plantillas/plantilla2/plantilla2.component';
+import { Plantilla3Component } from './plantillas/plantilla3/plantilla3.component';
 
 
 
@@ -29,7 +37,10 @@ import { PlantillaComponent } from './plantilla/plantilla.component';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    PlantillaComponent
+    PlantillaComponent,
+    Plantilla1Component,
+    Plantilla2Component,
+    Plantilla3Component
   ],
   imports: [
     ReactiveFormsModule,
@@ -47,8 +58,11 @@ import { PlantillaComponent } from './plantilla/plantilla.component';
     MatInputModule,
     MatButtonModule,
     MatSnackBarModule,
+    MatIconModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
-  providers: [AuthenticationService, StorageService],
+  providers: [AuthorizatedGuard, AuthenticationService, StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
