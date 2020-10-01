@@ -14,16 +14,11 @@ export class AuthenticationService {
 
   private basePath = 'http://127.0.0.1:8000/api/';
 
-  login(loginObj: LoginObject): Observable<Session> {
+  public login(loginObj: LoginObject): Observable<Session> {
     return this.http.post<Session>(this.basePath + 'login', loginObj);
   }
 
   logout(): Observable<boolean> {
     return this.http.post<boolean>(this.basePath + 'logout', {});
-  }
-
-  private extractData(res: Response) {
-    let body = res.json();
-    return body;
   }
 }
