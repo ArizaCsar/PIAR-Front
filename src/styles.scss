@@ -1,36 +1,46 @@
 /* app/styles.css */
 
 * {
-    box-sizing: border-box;
-  }
-  html,
-  body {
-    background: #ecf0f3;
-  }
-
-html, body { height: 100%; }
-body { margin: 0; }
-.errorMessage {
-  background: #f44336;
-    max-width: 350px !important;
-    width: 350px !important;
-    min-width: 200px !important;
-    .mat-simple-snackbar {
-        font-size: 16px !important;
-        letter-spacing: 0.01em;
-        line-height: 21px;
-        color: #fff !important;
-    }
+  box-sizing: border-box;
+}
+html,
+body {
+  background: #ecf0f3;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+.errorMessage {
+  background: #f44336;
+  max-width: 350px !important;
+  width: 350px !important;
+  min-width: 200px !important;
+  .mat-simple-snackbar {
+    font-size: 16px !important;
+    letter-spacing: 0.01em;
+    line-height: 21px;
+    color: #fff !important;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .template-container {
   mat-form-field {
     // margin-right: 12px;
   }
-
 }
 
 .grid-1 {
@@ -50,4 +60,39 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .grid-4 {
   width: 24%;
   margin: 0.5%;
+}
+
+.tabla-crud {
+  width: 100%;
+}
+
+.acciones-superiores {
+  text-align: right;
+
+  .accion {
+    cursor: pointer;
+  }
+}
+
+.icono-acciones {
+  width: 36px !important;
+  height: 36px !important;
+  margin-right: 5px !important;
+
+  .mat-icon {
+    font-size: 16px;
+    width: 23px;
+    height: 23px;
+  }
+}
+
+.mat-card-header {
+  display: unset !important;
+
+  button {
+    position: relative;
+    display: block;
+    float: right;
+    top: -30px;
+  }
 }

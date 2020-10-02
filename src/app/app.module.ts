@@ -18,6 +18,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
 
 
 import { AuthenticationService } from './login/shared/authentication.service';
@@ -29,6 +32,9 @@ import { AuthorizatedGuard } from './core/guards/authorizated.guard';
 import { Plantilla1Component } from './plantillas/plantilla1/plantilla1.component';
 import { Plantilla2Component } from './plantillas/plantilla2/plantilla2.component';
 import { Plantilla3Component } from './plantillas/plantilla3/plantilla3.component';
+import { PaisesComponent } from './administracion/paises/paises.component';
+import { DepartamentosComponent } from './administracion/departamentos/departamentos.component';
+import { CiudadesComponent } from './administracion/ciudades/ciudades.component';
 
 
 
@@ -40,7 +46,10 @@ import { Plantilla3Component } from './plantillas/plantilla3/plantilla3.componen
     PlantillaComponent,
     Plantilla1Component,
     Plantilla2Component,
-    Plantilla3Component
+    Plantilla3Component,
+    PaisesComponent,
+    DepartamentosComponent,
+    CiudadesComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -61,6 +70,9 @@ import { Plantilla3Component } from './plantillas/plantilla3/plantilla3.componen
     MatIconModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatSidenavModule,
+    MatListModule,
+    MatTableModule,
   ],
   providers: [AuthorizatedGuard, AuthenticationService, StorageService],
   bootstrap: [AppComponent]

@@ -3,10 +3,27 @@
 }
 
 .template-container {
-  width: 80%;
-  margin: 20px auto 30px;
+  width: 100vw;
+  height: calc(100vh - 64px);
+
+  .mat-drawer-side {
+    width: 15vw;
+  }
+
+  .mat-drawer-content {
+    padding: 20px;
+  }
 }
 
-::ng-deep .template-container .mat-card {
+.active {
+  background: #673ab7;
+  color: #fff;
+
+  &:hover {
+    color: rgba(0,0,0,.87);
+  }
+}
+
+::ng-deep .template-container .mat-card:not(:first-child) {
   margin-top: 20px;
 }

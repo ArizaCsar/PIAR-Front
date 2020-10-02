@@ -1,5 +1,8 @@
 import { Host, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CiudadesComponent } from './administracion/ciudades/ciudades.component';
+import { DepartamentosComponent } from './administracion/departamentos/departamentos.component';
+import { PaisesComponent } from './administracion/paises/paises.component';
 
 
 import { AuthorizatedGuard } from './core/guards/authorizated.guard';
@@ -24,6 +27,10 @@ const appRoutes = [
   { path: "home", component: HomeComponent, pathMatch: "full", canActivate: [ AuthorizatedGuard ] },
   { path: "plantilla1", component: Plantilla1Component, pathMatch: "full", canActivate: [ AuthorizatedGuard ] },
   { path: "plantilla2", component: Plantilla2Component, pathMatch: "full", canActivate: [ AuthorizatedGuard ] },
-  { path: "plantilla3", component: Plantilla3Component, pathMatch: "full", canActivate: [ AuthorizatedGuard ] }
+  { path: "plantilla3", component: Plantilla3Component, pathMatch: "full", canActivate: [ AuthorizatedGuard ] },
+  // Administracion
+  { path: "administrar/paises", component: PaisesComponent, pathMatch: "full", canActivate: [ AuthorizatedGuard ] },
+  { path: "administrar/departamentos", component: DepartamentosComponent, pathMatch: "full", canActivate: [ AuthorizatedGuard ] },
+  { path: "administrar/ciudades", component: CiudadesComponent, pathMatch: "full", canActivate: [ AuthorizatedGuard ] },
 ];
 export const routing = RouterModule.forRoot(appRoutes);

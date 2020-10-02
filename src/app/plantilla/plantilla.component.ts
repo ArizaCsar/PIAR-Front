@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../login/shared/authentication.service';
+import { Session } from '../models/session.model';
 import { StorageService } from '../services/storage.service';
 
 @Component({
@@ -9,10 +10,13 @@ import { StorageService } from '../services/storage.service';
 })
 export class PlantillaComponent implements OnInit {
 
+  sessionData: Session;
+
   constructor(
-    private storageService: StorageService) { }
+    private storageService: StorageService) {}
 
   ngOnInit(): void {
+    this.sessionData = this.storageService.getCurrentSession();
   }
 
   public logout(): void{

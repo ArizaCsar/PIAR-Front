@@ -1,13 +1,37 @@
 <mat-toolbar color="primary">
  <span>PIAR</span>
  <span class="example-spacer"></span>
- <a mat-button [routerLink]="['/plantilla1']">Plantilla 1</a>
- <a mat-button [routerLink]="['/plantilla2']">Plantilla 2</a>
- <a mat-button [routerLink]="['/plantilla3']">Plantilla 3</a>
+ <mat-icon>person</mat-icon>
+ <span class="user-name">{{ sessionData.user.nombreTercero }}</span>
  <button title="Cerrar sesión" mat-icon-button (click)="logout()">
   <mat-icon>exit_to_app</mat-icon>
 </button>
 </mat-toolbar>
-<div class="template-container">
+<!-- <div class="template-container">
   <ng-content></ng-content>
-</div>
+</div> -->
+<mat-drawer-container class="template-container">
+  <mat-drawer mode="side" opened>
+    <mat-nav-list>
+      <ng-container *ngIf="sessionData.user.codigoCargo === 1">
+        <a mat-list-item [routerLink]="['/administrar/paises']" routerLinkActive="active">Paises</a>
+        <a mat-list-item [routerLink]="['/administrar/departamentos']" routerLinkActive="active">Departamentos</a>
+        <a mat-list-item [routerLink]="['/administrar/ciudades']" routerLinkActive="active">Ciudades</a>
+
+      </ng-container>
+      <ng-container *ngIf="sessionData.user.codigoCargo === 2">
+        <a mat-list-item [routerLink]="['/plantilla1']">Plantilla 1</a>
+        <a mat-list-item [routerLink]="['/plantilla2']">Plantilla 2</a>
+      </ng-container>
+      <ng-container *ngIf="sessionData.user.codigoCargo === 3">
+        <a mat-list-item [routerLink]="['/plantilla3']">Plantilla 3</a>
+      </ng-container>
+    </mat-nav-list>
+    <!-- <mat-action-list>
+      <mat-list-option [routerLink]="['/plantilla1']">Plantilla 1</mat-list-option>
+      <mat-list-option [routerLink]="['/plantilla2']">Plantilla 2</mat-list-option>
+      <mat-list-option [routerLink]="['/plantilla3']">Plantilla 3</mat-list-option>
+    </mat-action-list> -->
+  </mat-drawer>
+  <mat-drawer-content><ng-content></ng-content></mat-drawer-content>
+</mat-drawer-container>
