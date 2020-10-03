@@ -21,6 +21,7 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 import { AuthenticationService } from './login/shared/authentication.service';
@@ -35,6 +36,7 @@ import { Plantilla3Component } from './plantillas/plantilla3/plantilla3.componen
 import { PaisesComponent } from './administracion/paises/paises.component';
 import { DepartamentosComponent } from './administracion/departamentos/departamentos.component';
 import { CiudadesComponent } from './administracion/ciudades/ciudades.component';
+
 
 
 
@@ -59,7 +61,7 @@ import { CiudadesComponent } from './administracion/ciudades/ciudades.component'
     AppRoutingModule,
     HttpClientModule,
     routing,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule,    
 
     MatToolbarModule,
     MatCardModule,
@@ -73,6 +75,7 @@ import { CiudadesComponent } from './administracion/ciudades/ciudades.component'
     MatSidenavModule,
     MatListModule,
     MatTableModule,
+    MatDialogModule,
   ],
   providers: [AuthorizatedGuard, AuthenticationService, StorageService],
   bootstrap: [AppComponent]

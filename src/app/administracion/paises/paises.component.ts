@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
+import { VentanaConfirmacionComponent } from 'src/app/core/ventana-confirmacion/ventana-confirmacion.component';
 import { Pais } from 'src/app/models/pais.model';
 import { AdministracionService } from '../administracion.service';
 
@@ -12,7 +14,7 @@ export class PaisesComponent implements OnInit {
 
   obtenerPaises$: Observable<Pais[]>;
 
-  constructor(private adminService: AdministracionService) { }
+  constructor(private adminService: AdministracionService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.obtenerPaises$ = this.adminService.obtenerPaises();
@@ -27,7 +29,14 @@ export class PaisesComponent implements OnInit {
   }
 
   eliminar(codigoPais: string) {
-    console.log(`Botón eliminar presionado para el elemento con código ${codigoPais}`);
+    const dialogRef = this.dialog.open(VentanaConfirmacionComponent, {
+      width: '350px',
+      data: {tipoDato: 'pais'}
+    });
+
+    dialogRef.afterClosed().subscribe(confirmacion => {
+      console.log(confirmacion);      
+    });
   }
 
 }
