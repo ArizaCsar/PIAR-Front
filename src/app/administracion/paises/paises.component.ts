@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { VentanaConfirmacionComponent } from 'src/app/core/ventana-confirmacion/ventana-confirmacion.component';
 import { Pais } from 'src/app/models/pais.model';
 import { AdministracionService } from '../administracion.service';
@@ -17,7 +18,7 @@ export class PaisesComponent implements OnInit {
   constructor(private adminService: AdministracionService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.obtenerPaises$ = this.adminService.obtenerPaises();
+    this._cargarPaises();
   }
 
   agregar() {
@@ -35,8 +36,23 @@ export class PaisesComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(confirmacion => {
-      console.log(confirmacion);      
+      if(confirmacion){
+        this.adminService.eliminarPais(codigoPais)
+        .pipe(
+          switchMap((respuestaBorrado:any)=>{
+            if(respuestaBorrado){
+              this._cargarPaises();
+            }
+            return respuestaBorrado;
+          })
+        )
+        .subscribe();
+      }
     });
+  }
+
+  private _cargarPaises(){
+    this.obtenerPaises$ = this.adminService.obtenerPaises();
   }
 
 }

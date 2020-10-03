@@ -36,6 +36,7 @@ import { Plantilla3Component } from './plantillas/plantilla3/plantilla3.componen
 import { PaisesComponent } from './administracion/paises/paises.component';
 import { DepartamentosComponent } from './administracion/departamentos/departamentos.component';
 import { CiudadesComponent } from './administracion/ciudades/ciudades.component';
+import { VentanaConfirmacionComponent } from './core/ventana-confirmacion/ventana-confirmacion.component';
 
 
 
@@ -51,7 +52,8 @@ import { CiudadesComponent } from './administracion/ciudades/ciudades.component'
     Plantilla3Component,
     PaisesComponent,
     DepartamentosComponent,
-    CiudadesComponent
+    CiudadesComponent,
+    VentanaConfirmacionComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -77,6 +79,7 @@ import { CiudadesComponent } from './administracion/ciudades/ciudades.component'
     MatTableModule,
     MatDialogModule,
   ],
+  entryComponents:[VentanaConfirmacionComponent],
   providers: [AuthorizatedGuard, AuthenticationService, StorageService],
   bootstrap: [AppComponent]
 })

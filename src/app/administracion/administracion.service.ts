@@ -7,12 +7,17 @@ import { Pais } from '../models/pais.model';
   providedIn: 'root'
 })
 export class AdministracionService {
-
+  
   private basePath = 'http://127.0.0.1:8000/api/';
-
+  
   constructor(private http: HttpClient) { }
-
+  
   obtenerPaises() : Observable<Pais[]> {
     return this.http.get<Pais[]>(this.basePath + 'paises');
   }
+
+  eliminarPais(codigoPais: string) {    
+    return this.http.delete(this.basePath + 'pais/' + codigoPais);
+  }
+
 }
