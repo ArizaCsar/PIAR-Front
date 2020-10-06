@@ -8,8 +8,10 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class VentanaConfirmacionComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<VentanaConfirmacionComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(
+    public dialogRef: MatDialogRef<VentanaConfirmacionComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+    ) { }
 
   ngOnInit(): void {
   }

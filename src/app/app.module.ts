@@ -36,6 +36,8 @@ import { Plantilla3Component } from './plantillas/plantilla3/plantilla3.componen
 import { PaisesComponent } from './administracion/paises/paises.component';
 import { DepartamentosComponent } from './administracion/departamentos/departamentos.component';
 import { CiudadesComponent } from './administracion/ciudades/ciudades.component';
+import { VentanaConfirmacionComponent } from './core/ventana-confirmacion/ventana-confirmacion.component';
+import { VentanaCrearEditarPaisComponent } from './administracion/paises/ventana-crear-editar-pais/ventana-crear-editar-pais.component';
 
 
 
@@ -51,7 +53,9 @@ import { CiudadesComponent } from './administracion/ciudades/ciudades.component'
     Plantilla3Component,
     PaisesComponent,
     DepartamentosComponent,
-    CiudadesComponent
+    CiudadesComponent,
+    VentanaConfirmacionComponent,
+    VentanaCrearEditarPaisComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -61,7 +65,7 @@ import { CiudadesComponent } from './administracion/ciudades/ciudades.component'
     AppRoutingModule,
     HttpClientModule,
     routing,
-    BrowserAnimationsModule,    
+    BrowserAnimationsModule,
 
     MatToolbarModule,
     MatCardModule,
@@ -78,6 +82,7 @@ import { CiudadesComponent } from './administracion/ciudades/ciudades.component'
     MatDialogModule,
   ],
   providers: [AuthorizatedGuard, AuthenticationService, StorageService],
+  entryComponents: [VentanaConfirmacionComponent, VentanaCrearEditarPaisComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

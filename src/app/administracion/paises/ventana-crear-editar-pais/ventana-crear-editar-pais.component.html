@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>
+  <ng-container *ngIf="data.accion === 'nuevo'">Agregar</ng-container>
+  <ng-container *ngIf="data.accion === 'editar'">Actualizar</ng-container>
+</h1>
+<div mat-dialog-content>
+  <form [formGroup]="paisForm">
+    <p>
+      <ng-container *ngIf="data.accion === 'nuevo'">Ingrese los datos del nuevo país</ng-container>
+      <ng-container *ngIf="data.accion === 'editar'">Ingrese el nombre del país</ng-container>
+    </p>
+    <p>
+      <mat-form-field appearance="outline" *ngIf="data.accion==='nuevo'">
+        <mat-label>Código</mat-label>
+        <input matInput formControlName="codigoPais" />
+        <mat-error *ngIf="checkError('codigoPais', 'required')">Por favor el código del país</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Pais</mat-label>
+        <input matInput formControlName="descripcionPais" />
+        <mat-error *ngIf="checkError('descripcionPais', 'required')">Por favor ingrese nombre del país</mat-error>
+      </mat-form-field>
+    </p>
+  </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" cdkFocusInitial (click)="aceptar()"
+    [disabled]="paisForm.invalid">Aceptar</button>
+  <button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
+</div>
