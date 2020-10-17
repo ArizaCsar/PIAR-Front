@@ -14,11 +14,13 @@
         <input matInput formControlName="codigoPais" />
         <mat-error *ngIf="checkError('codigoPais', 'required')">Por favor el código del país</mat-error>
       </mat-form-field>
+
       <mat-form-field appearance="outline">
         <mat-label>Pais</mat-label>
         <input matInput formControlName="descripcionPais" />
         <mat-error *ngIf="checkError('descripcionPais', 'required')">Por favor ingrese nombre del país</mat-error>
       </mat-form-field>
+      
     </p>
   </form>
 </div>

@@ -1,3 +1,44 @@
 <app-plantilla>
-  <p>departamentos works!</p>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Departamentos</mat-card-title>
+      <button mat-mini-fab color="primary" class="icono-acciones" align="end" (click)="agregar()" title="Nuevo departamento">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-card-header>
+    <mat-card-content>
+      <table mat-table [dataSource]="obtenerDepartamentos$ | async" class="mat-elevation-z8 tabla-crud">
+
+        <ng-container matColumnDef="codigoDepartamento">
+          <th mat-header-cell *matHeaderCellDef> Código </th>
+          <td mat-cell *matCellDef="let element"> {{element.codigoDepartamento}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="descripcionDepartamento">
+          <th mat-header-cell *matHeaderCellDef> Nombre </th>
+          <td mat-cell *matCellDef="let element"> {{element.descripcionDepartamento}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="codigoPais">
+          <th mat-header-cell *matHeaderCellDef> Pais </th>
+          <td mat-cell *matCellDef="let element">  </td>
+        </ng-container>
+
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-mini-fab color="primary" class="icono-acciones" (click)="editar(element.codigoDepartamento)" title="Editar departamento">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-mini-fab color="warn" class="icono-acciones" (click)="eliminar(element.codigoDepartamento)" title="Eliminar departamento">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="['codigoDepartamento', 'descripcionDepartamento', 'acciones']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['codigoDepartamento', 'descripcionDepartamento', 'acciones'];"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
 </app-plantilla>

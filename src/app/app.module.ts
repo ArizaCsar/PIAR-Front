@@ -38,6 +38,8 @@ import { DepartamentosComponent } from './administracion/departamentos/departame
 import { CiudadesComponent } from './administracion/ciudades/ciudades.component';
 import { VentanaConfirmacionComponent } from './core/ventana-confirmacion/ventana-confirmacion.component';
 import { VentanaCrearEditarPaisComponent } from './administracion/paises/ventana-crear-editar-pais/ventana-crear-editar-pais.component';
+import { VentanaCrearEditarDepartamentoComponent } from './administracion/departamentos/ventana-crear-editar-departamento/ventana-crear-editar-departamento.component';
+import { VentanaCrearEditarCiudadComponent } from './administracion/ciudades/ventana-crear-editar-ciudad/ventana-crear-editar-ciudad.component';
 
 
 
@@ -55,7 +57,9 @@ import { VentanaCrearEditarPaisComponent } from './administracion/paises/ventana
     DepartamentosComponent,
     CiudadesComponent,
     VentanaConfirmacionComponent,
-    VentanaCrearEditarPaisComponent
+    VentanaCrearEditarPaisComponent,
+    VentanaCrearEditarDepartamentoComponent,
+    VentanaCrearEditarCiudadComponent
   ],
   imports: [
     ReactiveFormsModule,

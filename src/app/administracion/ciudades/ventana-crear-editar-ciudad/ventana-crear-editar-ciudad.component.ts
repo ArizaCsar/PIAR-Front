@@ -3,16 +3,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-ventana-crear-editar-pais',
-  templateUrl: './ventana-crear-editar-pais.component.html',
-  styleUrls: ['./ventana-crear-editar-pais.component.scss']
+  selector: 'app-ventana-crear-editar-ciudad',
+  templateUrl: './ventana-crear-editar-ciudad.component.html',
+  styleUrls: ['./ventana-crear-editar-ciudad.component.scss']
 })
-export class VentanaCrearEditarPaisComponent implements OnInit {
-
-  paisForm: FormGroup;
+export class VentanaCrearEditarCiudadComponent implements OnInit {
+  ciudadForm: FormGroup;
 
   constructor(
-    public dialogRef: MatDialogRef<VentanaCrearEditarPaisComponent>,
+    public dialogRef: MatDialogRef<VentanaCrearEditarCiudadComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     public fb: FormBuilder
   ) { }
@@ -22,27 +21,27 @@ export class VentanaCrearEditarPaisComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.paisForm = this.fb.group({
+    this.ciudadForm = this.fb.group({
       codigoPais: ['', Validators.required],
       descripcionPais: ['', Validators.required]
     });
 
     if (this.data.accion === 'editar') {
-      this.paisForm.removeControl('codigoPais');
-      this.paisForm.get('descripcionPais').setValue(this.data.pais.descripcionPais);
-      this.paisForm.updateValueAndValidity();
+      this.ciudadForm.removeControl('codigoCiudad');
+      this.ciudadForm.get('descripcionCiudad').setValue(this.data.pais.descripcionCiudad);
+      this.ciudadForm.updateValueAndValidity();
     }
   }
 
   aceptar(){
-    this._cerrarVentana(this.paisForm.getRawValue());
+    this._cerrarVentana(this.ciudadForm.getRawValue());
   }
 
   cancelar(){
     this._cerrarVentana(false);
   }
   public checkError = (controlName: string, errorName: string) => {
-    return this.paisForm.controls[controlName].hasError(errorName);
+    return this.ciudadForm.controls[controlName].hasError(errorName);
   }
 
 }
