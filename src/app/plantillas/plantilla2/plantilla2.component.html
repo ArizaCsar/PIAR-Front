@@ -1,1 +1,120 @@
-<p>plantilla2 works!</p>
+<app-plantilla>
+  <form>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          Titulo
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <mat-form-field appearance="outline" class="grid-4">
+          <mat-label>Fecha de elaboración</mat-label>
+          <input matInput [matDatepicker]="picker1" />
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-4">
+          <mat-label>Institución educativa: </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-4">
+          <mat-label>Sede: </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+
+
+        <mat-form-field appearance="outline" class="grid-1">
+          <mat-label>Docentes que elaboran y cargo: </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+      </mat-card-content>
+
+      <mat-card-header>
+        <mat-card-title>
+          Datos del estudiante
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>Nombre del estudiante: </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>Documento de identificación: </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>Edad: </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>Grado: </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+      </mat-card-content>
+
+      <mat-card-header>
+        <mat-card-title>
+          Características del estudiante
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <mat-form-field appearance="outline" class="grid-1">
+          <mat-label>Descripción general del estudiante con énfasis en gustos e intereses o aspectos que le desagradan, expectativas del estudiante y su familia.</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-1">
+          <mat-label>Descripción en términos de lo que hace, puede hacer o requiere apoyo el estudiante para favorecer su proceso educativo.</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>Grado: </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+      </mat-card-content>
+
+      <mat-card-header>
+        <mat-card-title>
+          Ajustes razonables
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <mat-form-field appearance="outline" class="grid-1">
+          <mat-label>Revisar esta parte: </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+      </mat-card-content>
+
+      <mat-card-header>
+        <mat-card-title>
+          Recomendaciones para el plan de mejoramiento institucional para la eliminación de barreras
+          y la creación de procesos para la participación, el aprendizaje y el progreso de los estudiantes:
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <mat-form-field appearance="outline" class="grid-1">
+          <mat-label>Revisar esta parte: </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+      </mat-card-content>
+    </mat-card>
+  </form>
+</app-plantilla>

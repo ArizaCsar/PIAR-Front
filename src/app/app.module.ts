@@ -22,6 +22,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
 
 
 import { AuthenticationService } from './login/shared/authentication.service';
@@ -36,6 +38,7 @@ import { Plantilla3Component } from './plantillas/plantilla3/plantilla3.componen
 import { PaisesComponent } from './administracion/paises/paises.component';
 import { DepartamentosComponent } from './administracion/departamentos/departamentos.component';
 import { CiudadesComponent } from './administracion/ciudades/ciudades.component';
+import { VentanaConfirmacionComponent } from './core/ventana-confirmacion/ventana-confirmacion.component';
 
 
 
@@ -51,7 +54,8 @@ import { CiudadesComponent } from './administracion/ciudades/ciudades.component'
     Plantilla3Component,
     PaisesComponent,
     DepartamentosComponent,
-    CiudadesComponent
+    CiudadesComponent,
+    VentanaConfirmacionComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -61,7 +65,7 @@ import { CiudadesComponent } from './administracion/ciudades/ciudades.component'
     AppRoutingModule,
     HttpClientModule,
     routing,
-    BrowserAnimationsModule,    
+    BrowserAnimationsModule,
 
     MatToolbarModule,
     MatCardModule,
@@ -76,6 +80,8 @@ import { CiudadesComponent } from './administracion/ciudades/ciudades.component'
     MatListModule,
     MatTableModule,
     MatDialogModule,
+    MatSelectModule,
+    MatRadioModule,
   ],
   providers: [AuthorizatedGuard, AuthenticationService, StorageService],
   bootstrap: [AppComponent]
