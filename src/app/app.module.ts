@@ -40,6 +40,9 @@ import { VentanaConfirmacionComponent } from './core/ventana-confirmacion/ventan
 import { VentanaCrearEditarPaisComponent } from './administracion/paises/ventana-crear-editar-pais/ventana-crear-editar-pais.component';
 import { VentanaCrearEditarDepartamentoComponent } from './administracion/departamentos/ventana-crear-editar-departamento/ventana-crear-editar-departamento.component';
 import { VentanaCrearEditarCiudadComponent } from './administracion/ciudades/ventana-crear-editar-ciudad/ventana-crear-editar-ciudad.component';
+import { TiposIdentificacionComponent } from './administracion/tipos-identificacion/tipos-identificacion.component';
+import { VentanaCrearEditarTiposIdentificacionComponent } from './administracion/tipos-identificacion/ventana-crear-editar-tipos-identificacion/ventana-crear-editar-tipos-identificacion.component';
+
 
 
 
@@ -59,7 +62,9 @@ import { VentanaCrearEditarCiudadComponent } from './administracion/ciudades/ven
     VentanaConfirmacionComponent,
     VentanaCrearEditarPaisComponent,
     VentanaCrearEditarDepartamentoComponent,
-    VentanaCrearEditarCiudadComponent
+    VentanaCrearEditarCiudadComponent,
+    TiposIdentificacionComponent,
+    VentanaCrearEditarTiposIdentificacionComponent
   ],
   imports: [
     ReactiveFormsModule,

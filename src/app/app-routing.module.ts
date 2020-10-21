@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { CiudadesComponent } from './administracion/ciudades/ciudades.component';
 import { DepartamentosComponent } from './administracion/departamentos/departamentos.component';
 import { PaisesComponent } from './administracion/paises/paises.component';
+import { TiposIdentificacionComponent } from './administracion/tipos-identificacion/tipos-identificacion.component';
+
 
 
 import { AuthorizatedGuard } from './core/guards/authorizated.guard';
@@ -32,5 +34,6 @@ const appRoutes = [
   { path: "administrar/paises", component: PaisesComponent, pathMatch: "full", canActivate: [ AuthorizatedGuard ] },
   { path: "administrar/departamentos", component: DepartamentosComponent, pathMatch: "full", canActivate: [ AuthorizatedGuard ] },
   { path: "administrar/ciudades", component: CiudadesComponent, pathMatch: "full", canActivate: [ AuthorizatedGuard ] },
+  { path: "administrar/tipos-identificacion", component: TiposIdentificacionComponent, pathMatch: "full", canActive:[ AuthorizatedGuard]}
 ];
 export const routing = RouterModule.forRoot(appRoutes);
