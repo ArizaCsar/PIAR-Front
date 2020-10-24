@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>
+    <ng-container *ngIf="data.accion === 'nuevo'">Agregar</ng-container>
+    <ng-container *ngIf="data.accion === 'editar'">Actualizar</ng-container>
+  </h1>
+  <div mat-dialog-content>
+    <form [formGroup]="grupoEtnicoForm">
+      <p>
+        <ng-container *ngIf="data.accion === 'nuevo'">Ingrese los datos del nuevo grupo étnico</ng-container>
+        <ng-container *ngIf="data.accion === 'editar'">Ingrese el nombre del país</ng-container>
+      </p>
+      <p>
+        <mat-form-field appearance="outline" *ngIf="data.accion==='nuevo'">
+          <mat-label>Código</mat-label>
+          <input matInput formControlName="codigoGrupoEtnico" />
+          <mat-error *ngIf="checkError('codigoGrupoEtnico', 'required')">Por favor el código del grupo étnico</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Grupo étnico</mat-label>
+          <input matInput formControlName="descripcionGrupoEtnico" />
+          <mat-error *ngIf="checkError('descripcionGrupoEtnico', 'required')">Por favor ingrese nombre del grupo étnico</mat-error>
+        </mat-form-field>
+        
+      </p>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+      <button mat-raised-button color="primary" cdkFocusInitial (click)="aceptar()"
+      [disabled]="grupoEtnicoForm.invalid">Aceptar</button>
+    <button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
+  </div>
+  

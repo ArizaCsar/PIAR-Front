@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>
+    <ng-container *ngIf="data.accion === 'nuevo'">Agregar</ng-container>
+    <ng-container *ngIf="data.accion === 'editar'">Actualizar</ng-container>
+  </h1>
+  <div mat-dialog-content>
+    <form [formGroup]="discapacidadForm">
+      <p>
+        <ng-container *ngIf="data.accion === 'nuevo'">Ingrese los datos de la nueva discapacidad</ng-container>
+        <ng-container *ngIf="data.accion === 'editar'">Ingrese el nombre de la discapacidad</ng-container>
+      </p>
+      <p>
+        <mat-form-field appearance="outline" *ngIf="data.accion==='nuevo'">
+          <mat-label>Código</mat-label>
+          <input matInput formControlName="codigoDiscapacidad" />
+          <mat-error *ngIf="checkError('codigoDiscapacidad', 'required')">Por favor el código de la discapacidad</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Discapacidad</mat-label>
+          <input matInput formControlName="descripcionDiscapacidad" />
+          <mat-error *ngIf="checkError('descripcionDiscapacidad', 'required')">Por favor ingrese nombre de la discapacidad</mat-error>
+        </mat-form-field>
+        
+      </p>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+      <button mat-raised-button color="primary" cdkFocusInitial (click)="aceptar()"
+      [disabled]="discapacidadForm.invalid">Aceptar</button>
+    <button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
+  </div>

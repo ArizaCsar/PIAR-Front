@@ -1,0 +1,40 @@
+<app-plantilla>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Grupos étnicos</mat-card-title>
+        <button mat-mini-fab color="primary" class="icono-acciones" align="end" (click)="agregar()" title="Nuevo grupo etnico">
+          <mat-icon>add</mat-icon>
+        </button>
+      </mat-card-header>
+      <mat-card-content>
+        <table mat-table [dataSource]="obtenerGruposEtnicos$ | async" class="mat-elevation-z8 tabla-crud">
+  
+          <ng-container matColumnDef="codigoGrupoEtnico">
+            <th mat-header-cell *matHeaderCellDef> Código </th>
+            <td mat-cell *matCellDef="let element"> {{element.codigoGrupoEtnico}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="descripcionGrupoEtnico">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.descripcionGrupoEtnico}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="acciones">
+            <th mat-header-cell *matHeaderCellDef> Acciones </th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-mini-fab color="primary" class="icono-acciones" (click)="editar(element.codigoGrupoEtnico)" title="Editar grupo etnico">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-mini-fab color="warn" class="icono-acciones" (click)="eliminar(element.codigoGrupoEtnico)" title="Eliminar grupo etnico">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="['codigoGrupoEtnico', 'descripcionGrupoEtnico', 'acciones']"></tr>
+          <tr mat-row *matRowDef="let row; columns: ['codigoGrupoEtnico', 'descripcionGrupoEtnico', 'acciones'];"></tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+  </app-plantilla>
+  

@@ -7,12 +7,18 @@ import { TiposIdentificacionComponent } from './administracion/tipos-identificac
 
 
 
+
 import { AuthorizatedGuard } from './core/guards/authorizated.guard';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from "./login/login.component";
 import { Plantilla1Component } from './plantillas/plantilla1/plantilla1.component';
 import { Plantilla2Component } from './plantillas/plantilla2/plantilla2.component';
 import { Plantilla3Component } from './plantillas/plantilla3/plantilla3.component';
+import { from } from 'rxjs';
+import { GruposEtnicosComponent } from './administracion/grupos-etnicos/grupos-etnicos.component';
+import { TiposDiscapacidadesComponent } from './administracion/tipos-discapacidades/tipos-discapacidades.component';
+import { DiscapacidadesComponent } from './administracion/discapacidades/discapacidades.component';
+import { OcupacionesComponent } from './administracion/ocupaciones/ocupaciones.component';
 
 
 const routes: Routes = [];
@@ -34,6 +40,10 @@ const appRoutes = [
   { path: "administrar/paises", component: PaisesComponent, pathMatch: "full", canActivate: [ AuthorizatedGuard ] },
   { path: "administrar/departamentos", component: DepartamentosComponent, pathMatch: "full", canActivate: [ AuthorizatedGuard ] },
   { path: "administrar/ciudades", component: CiudadesComponent, pathMatch: "full", canActivate: [ AuthorizatedGuard ] },
-  { path: "administrar/tipos-identificacion", component: TiposIdentificacionComponent, pathMatch: "full", canActive:[ AuthorizatedGuard]}
+  { path: "administrar/tipos-identificacion", component: TiposIdentificacionComponent, pathMatch: "full", canActive:[ AuthorizatedGuard]},
+  { path: "administrar/grupos-etnicos", component: GruposEtnicosComponent, pathMatch: "full", canActivate:[AuthorizatedGuard]},
+  { path: "administrar/tipos-discapacidades", component: TiposDiscapacidadesComponent, pathMatch: "full", canActivate:[AuthorizatedGuard]},
+  { path: "administrar/discapacidades", component: DiscapacidadesComponent, pathMatch: "full", canActivate:[AuthorizatedGuard]},
+  { path: "administrar/ocupaciones", component: OcupacionesComponent, pathMatch: "full", canActivate:[AuthorizatedGuard]},
 ];
 export const routing = RouterModule.forRoot(appRoutes);

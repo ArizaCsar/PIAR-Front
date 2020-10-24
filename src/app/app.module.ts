@@ -42,6 +42,14 @@ import { VentanaCrearEditarDepartamentoComponent } from './administracion/depart
 import { VentanaCrearEditarCiudadComponent } from './administracion/ciudades/ventana-crear-editar-ciudad/ventana-crear-editar-ciudad.component';
 import { TiposIdentificacionComponent } from './administracion/tipos-identificacion/tipos-identificacion.component';
 import { VentanaCrearEditarTiposIdentificacionComponent } from './administracion/tipos-identificacion/ventana-crear-editar-tipos-identificacion/ventana-crear-editar-tipos-identificacion.component';
+import { GruposEtnicosComponent } from './administracion/grupos-etnicos/grupos-etnicos.component';
+import { VentanaCrearEditarGrupoEtnicoComponent } from './administracion/grupos-etnicos/ventana-crear-editar-grupo-etnico/ventana-crear-editar-grupo-etnico.component';
+import { TiposDiscapacidadesComponent } from './administracion/tipos-discapacidades/tipos-discapacidades.component';
+import { VentanaCrearEditarTipoDiscapacidadComponent } from './administracion/tipos-discapacidades/ventana-crear-editar-tipo-discapacidad/ventana-crear-editar-tipo-discapacidad.component';
+import { DiscapacidadesComponent } from './administracion/discapacidades/discapacidades.component';
+import { VentanaCrearEditarDiscapacidadComponent } from './administracion/discapacidades/ventana-crear-editar-discapacidad/ventana-crear-editar-discapacidad.component';
+import { OcupacionesComponent } from './administracion/ocupaciones/ocupaciones.component';
+import { VentanaCrearEditarOcupacionComponent } from './administracion/ocupaciones/ventana-crear-editar-ocupacion/ventana-crear-editar-ocupacion.component';
 
 
 
@@ -64,7 +72,15 @@ import { VentanaCrearEditarTiposIdentificacionComponent } from './administracion
     VentanaCrearEditarDepartamentoComponent,
     VentanaCrearEditarCiudadComponent,
     TiposIdentificacionComponent,
-    VentanaCrearEditarTiposIdentificacionComponent
+    VentanaCrearEditarTiposIdentificacionComponent,
+    GruposEtnicosComponent,
+    VentanaCrearEditarGrupoEtnicoComponent,
+    TiposDiscapacidadesComponent,
+    VentanaCrearEditarTipoDiscapacidadComponent,
+    DiscapacidadesComponent,
+    VentanaCrearEditarDiscapacidadComponent,
+    OcupacionesComponent,
+    VentanaCrearEditarOcupacionComponent
   ],
   imports: [
     ReactiveFormsModule,
