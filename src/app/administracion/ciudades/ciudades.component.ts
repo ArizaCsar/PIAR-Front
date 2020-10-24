@@ -28,8 +28,9 @@ export class CiudadesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this._cargarCiudades();
   }
-                                      
+
   agregar() {
     const nuevoRef = this.dialog.open(VentanaCrearEditarCiudadComponent, {
       width: '450px',
