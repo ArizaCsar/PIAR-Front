@@ -39,6 +39,12 @@ import { PaisesComponent } from './administracion/paises/paises.component';
 import { DepartamentosComponent } from './administracion/departamentos/departamentos.component';
 import { CiudadesComponent } from './administracion/ciudades/ciudades.component';
 import { VentanaConfirmacionComponent } from './core/ventana-confirmacion/ventana-confirmacion.component';
+<<<<<<< HEAD
+=======
+import { VentanaCrearEditarPaisComponent } from './administracion/paises/ventana-crear-editar-pais/ventana-crear-editar-pais.component';
+import { VentanaCrearEditarDepartamentoComponent } from './administracion/departamentos/ventana-crear-editar-departamento/ventana-crear-editar-departamento.component';
+import { VentanaCrearEditarCiudadComponent } from './administracion/ciudades/ventana-crear-editar-ciudad/ventana-crear-editar-ciudad.component';
+>>>>>>> ee16fa0d071fdd505f97fe34ea6a968b833f57dd
 
 
 
@@ -55,7 +61,14 @@ import { VentanaConfirmacionComponent } from './core/ventana-confirmacion/ventan
     PaisesComponent,
     DepartamentosComponent,
     CiudadesComponent,
+<<<<<<< HEAD
     VentanaConfirmacionComponent
+=======
+    VentanaConfirmacionComponent,
+    VentanaCrearEditarPaisComponent,
+    VentanaCrearEditarDepartamentoComponent,
+    VentanaCrearEditarCiudadComponent
+>>>>>>> ee16fa0d071fdd505f97fe34ea6a968b833f57dd
   ],
   imports: [
     ReactiveFormsModule,
@@ -84,6 +97,7 @@ import { VentanaConfirmacionComponent } from './core/ventana-confirmacion/ventan
     MatRadioModule,
   ],
   providers: [AuthorizatedGuard, AuthenticationService, StorageService],
+  entryComponents: [VentanaConfirmacionComponent, VentanaCrearEditarPaisComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
