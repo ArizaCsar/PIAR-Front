@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>
+    <ng-container *ngIf="data.accion === 'nuevo'">Agregar</ng-container>
+    <ng-container *ngIf="data.accion === 'editar'">Actualizar</ng-container>
+  </h1>
+  <div mat-dialog-content>
+    <form [formGroup]="cargoForm">
+      <p>
+        <ng-container *ngIf="data.accion === 'nuevo'">Ingrese los datos del nuevo cargo</ng-container>
+        <ng-container *ngIf="data.accion === 'editar'">Ingrese el nombre del cargo</ng-container>
+      </p>
+      <p>
+        <mat-form-field appearance="outline" *ngIf="data.accion==='nuevo'">
+          <mat-label>Código</mat-label>
+          <input matInput formControlName="codigoCargo" />
+          <mat-error *ngIf="checkError('codigoCargo', 'required')">Por favor el código del cargo</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Cargo</mat-label>
+          <input matInput formControlName="descripcionCargo" />
+          <mat-error *ngIf="checkError('descripcionCargo', 'required')">Por favor ingrese nombre del cargo</mat-error>
+        </mat-form-field>
+        
+      </p>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+      <button mat-raised-button color="primary" cdkFocusInitial (click)="aceptar()"
+      [disabled]="cargoForm.invalid">Aceptar</button>
+    <button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
+  </div>
+  

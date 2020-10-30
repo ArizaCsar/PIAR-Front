@@ -3,7 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { VentanaConfirmacionOcupacionComponent } from 'src/app/core/ventana-confirmacion-ocupacion/ventana-confirmacion-ocupacion.component';
+/* import { VentanaConfirmacionOcupacionComponent } from 'src/app/core/ventana-confirmacion-ocupacion/ventana-confirmacion-ocupacion.component'; */
+import { VentanaConfirmacionComponent } from 'src/app/core/ventana-confirmacion/ventana-confirmacion.component';
 import { Ocupacion } from 'src/app/models/ocupacion';
 import { AdministracionService } from '../administracion.service';
 import { VentanaCrearEditarOcupacionComponent } from './ventana-crear-editar-ocupacion/ventana-crear-editar-ocupacion.component';
@@ -98,7 +99,7 @@ export class OcupacionesComponent implements OnInit {
   }
 
   eliminar(codigoOcupacion: number) {
-    const dialogRef = this.dialog.open(VentanaConfirmacionOcupacionComponent, {
+    const dialogRef = this.dialog.open(VentanaConfirmacionComponent, {
       width: '350px',
       data: { tipoDato: 'ocupacion' }
     });

@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>
+    <ng-container *ngIf="data.accion === 'nuevo'">Agregar</ng-container>
+    <ng-container *ngIf="data.accion === 'editar'">Actualizar</ng-container>
+  </h1>
+  <div mat-dialog-content>
+    <form [formGroup]="materiaForm">
+      <p>
+        <ng-container *ngIf="data.accion === 'nuevo'">Ingrese los datos de la nueva materia</ng-container>
+        <ng-container *ngIf="data.accion === 'editar'">Ingrese el nombre de la materia</ng-container>
+      </p>
+      <p>
+        <mat-form-field appearance="outline" *ngIf="data.accion==='nuevo'">
+          <mat-label>Código</mat-label>
+          <input matInput formControlName="codigoMateria" />
+          <mat-error *ngIf="checkError('codigoMateria', 'required')">Por favor el código de la materia</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Materia</mat-label>
+          <input matInput formControlName="descripcionMateria" />
+          <mat-error *ngIf="checkError('descripcionMateria', 'required')">Por favor ingrese el nombre de la materia</mat-error>
+        </mat-form-field>
+        
+      </p>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+      <button mat-raised-button color="primary" cdkFocusInitial (click)="aceptar()"
+      [disabled]="materiaForm.invalid">Aceptar</button>
+    <button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
+  </div>
+  

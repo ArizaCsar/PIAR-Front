@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>
+    <ng-container *ngIf="data.accion === 'nuevo'">Agregar</ng-container>
+    <ng-container *ngIf="data.accion === 'editar'">Actualizar</ng-container>
+  </h1>
+  <div mat-dialog-content>
+    <form [formGroup]="distanciaForm">
+      <p>
+        <ng-container *ngIf="data.accion === 'nuevo'">Ingrese los datos de la nueva distancia</ng-container>
+        <ng-container *ngIf="data.accion === 'editar'">Ingrese el nombre de la distancia</ng-container>
+      </p>
+      <p>
+        <mat-form-field appearance="outline" *ngIf="data.accion==='nuevo'">
+          <mat-label>Código</mat-label>
+          <input matInput formControlName="codigoDistancia" />
+          <mat-error *ngIf="checkError('codigoDistancia', 'required')">Por favor el código de la distancia</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Distancia</mat-label>
+          <input matInput formControlName="descripcionDistancia" />
+          <mat-error *ngIf="checkError('descripcionDistancia', 'required')">Por favor ingrese nombre de la distancia</mat-error>
+        </mat-form-field>
+        
+      </p>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+      <button mat-raised-button color="primary" cdkFocusInitial (click)="aceptar()"
+      [disabled]="distanciaForm.invalid">Aceptar</button>
+    <button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
+  </div>
+  

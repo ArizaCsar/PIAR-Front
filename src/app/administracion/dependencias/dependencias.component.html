@@ -1,0 +1,40 @@
+<app-plantilla>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Dependencias</mat-card-title>
+        <button mat-mini-fab color="primary" class="icono-acciones" align="end" (click)="agregar()" title="Nueva dependencia">
+          <mat-icon>add</mat-icon>
+        </button>
+      </mat-card-header>
+      <mat-card-content>
+        <table mat-table [dataSource]="obtenerDependencias$ | async" class="mat-elevation-z8 tabla-crud">
+  
+          <ng-container matColumnDef="codigoDependencia">
+            <th mat-header-cell *matHeaderCellDef> Código </th>
+            <td mat-cell *matCellDef="let element"> {{element.codigoDependencia}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="descripcionDependencia">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.descripcionDependencia}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="acciones">
+            <th mat-header-cell *matHeaderCellDef> Acciones </th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-mini-fab color="primary" class="icono-acciones" (click)="editar(element.codigoDependencia)" title="Editar dependencia">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-mini-fab color="warn" class="icono-acciones" (click)="eliminar(element.codigoDependencia)" title="Eliminar dependencia">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="['codigoDependencia', 'descripcionDependencia', 'acciones']"></tr>
+          <tr mat-row *matRowDef="let row; columns: ['codigoDependencia', 'descripcionDependencia', 'acciones'];"></tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+  </app-plantilla>
+  

@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { VentanaConfirmacionGrupoEtnicoComponent } from 'src/app/core/ventana-confirmacion-grupo-etnico/ventana-confirmacion-grupo-etnico.component';
+import { VentanaConfirmacionComponent } from 'src/app/core/ventana-confirmacion/ventana-confirmacion.component';
 import { GrupoEtnico } from 'src/app/models/grupo_etnico';
 import { AdministracionService } from '../administracion.service';
 import { VentanaCrearEditarGrupoEtnicoComponent } from './ventana-crear-editar-grupo-etnico/ventana-crear-editar-grupo-etnico.component';
@@ -97,7 +97,7 @@ export class GruposEtnicosComponent implements OnInit {
   }
 
   eliminar(codigoGrupoEtnico: number) {
-    const dialogRef = this.dialog.open(VentanaConfirmacionGrupoEtnicoComponent, {
+    const dialogRef = this.dialog.open(VentanaConfirmacionComponent, {
       width: '350px',
       data: { tipoDato: 'grupoEtnico' }
     });

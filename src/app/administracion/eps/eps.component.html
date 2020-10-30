@@ -1,0 +1,40 @@
+<app-plantilla>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>EPS</mat-card-title>
+        <button mat-mini-fab color="primary" class="icono-acciones" align="end" (click)="agregar()" title="Nueva EPS">
+          <mat-icon>add</mat-icon>
+        </button>
+      </mat-card-header>
+      <mat-card-content>
+        <table mat-table [dataSource]="obtenerEPS$ | async" class="mat-elevation-z8 tabla-crud">
+  
+          <ng-container matColumnDef="codigoEps">
+            <th mat-header-cell *matHeaderCellDef> Código </th>
+            <td mat-cell *matCellDef="let element"> {{element.codigoEps}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="descripcionEps">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.descripcionEps}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="acciones">
+            <th mat-header-cell *matHeaderCellDef> Acciones </th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-mini-fab color="primary" class="icono-acciones" (click)="editar(element.codigoEps)" title="Editar EPS">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-mini-fab color="warn" class="icono-acciones" (click)="eliminar(element.codigoEps)" title="Eliminar EPS">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="['codigoEps', 'descripcionEps', 'acciones']"></tr>
+          <tr mat-row *matRowDef="let row; columns: ['codigoEps', 'descripcionEps', 'acciones'];"></tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+  </app-plantilla>
+  

@@ -6,7 +6,7 @@
     <form [formGroup]="grupoEtnicoForm">
       <p>
         <ng-container *ngIf="data.accion === 'nuevo'">Ingrese los datos del nuevo grupo étnico</ng-container>
-        <ng-container *ngIf="data.accion === 'editar'">Ingrese el nombre del país</ng-container>
+        <ng-container *ngIf="data.accion === 'editar'">Ingrese el nombre del grupo étnico</ng-container>
       </p>
       <p>
         <mat-form-field appearance="outline" *ngIf="data.accion==='nuevo'">

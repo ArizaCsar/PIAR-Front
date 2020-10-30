@@ -50,6 +50,30 @@ import { DiscapacidadesComponent } from './administracion/discapacidades/discapa
 import { VentanaCrearEditarDiscapacidadComponent } from './administracion/discapacidades/ventana-crear-editar-discapacidad/ventana-crear-editar-discapacidad.component';
 import { OcupacionesComponent } from './administracion/ocupaciones/ocupaciones.component';
 import { VentanaCrearEditarOcupacionComponent } from './administracion/ocupaciones/ventana-crear-editar-ocupacion/ventana-crear-editar-ocupacion.component';
+import { MateriasComponent } from './administracion/materias/materias.component';
+import { VentanaCrearEditarMateriaComponent } from './administracion/materias/ventana-crear-editar-materia/ventana-crear-editar-materia.component';
+import { TiposTelefonosComponent } from './administracion/tipos-telefonos/tipos-telefonos.component';
+import { VentanaCrearEditarTipoTelefonoComponent } from './administracion/tipos-telefonos/ventana-crear-editar-tipo-telefono/ventana-crear-editar-tipo-telefono.component';
+import { EpsComponent } from './administracion/eps/eps.component';
+import { VentanaCrearEditarEpsComponent } from './administracion/eps/ventana-crear-editar-eps/ventana-crear-editar-eps.component';
+import { ParentescosComponent } from './administracion/parentescos/parentescos.component';
+import { VentanaCrearEditarParentescoComponent } from './administracion/parentescos/ventana-crear-editar-parentesco/ventana-crear-editar-parentesco.component';
+import { FrecuenciasComponent } from './administracion/frecuencias/frecuencias.component';
+import { VentanaCrearEditarFrecuenciaComponent } from './administracion/frecuencias/ventana-crear-editar-frecuencia/ventana-crear-editar-frecuencia.component';
+import { DistanciasComponent } from './administracion/distancias/distancias.component';
+import { VentanaCrearEditarDistanciaComponent } from './administracion/distancias/ventana-crear-editar-distancia/ventana-crear-editar-distancia.component';
+import { EntidadesEducativasComponent } from './administracion/entidades-educativas/entidades-educativas.component';
+import { VentanaCrearEditarEntidadEducativaComponent } from './administracion/entidades-educativas/ventana-crear-editar-entidad-educativa/ventana-crear-editar-entidad-educativa.component';
+import { JornadasComponent } from './administracion/jornadas/jornadas.component';
+import { VentanaCrearEditarJornadaComponent } from './administracion/jornadas/ventana-crear-editar-jornada/ventana-crear-editar-jornada.component';
+import { CargosComponent } from './administracion/cargos/cargos.component';
+import { VentanaCrearEditarCargoComponent } from './administracion/cargos/ventana-crear-editar-cargo/ventana-crear-editar-cargo.component';
+import { GradosComponent } from './administracion/grados/grados.component';
+import { VentanaCrearEditarGradoComponent } from './administracion/grados/ventana-crear-editar-grado/ventana-crear-editar-grado.component';
+import { DependenciasComponent } from './administracion/dependencias/dependencias.component';
+import { VentanaCrearEditarDependenciaComponent } from './administracion/dependencias/ventana-crear-editar-dependencia/ventana-crear-editar-dependencia.component';
+import { SedesComponent } from './administracion/sedes/sedes.component';
+import { VentanaCrearEditarSedeComponent } from './administracion/sedes/ventana-crear-editar-sede/ventana-crear-editar-sede.component';
 
 
 
@@ -80,7 +104,31 @@ import { VentanaCrearEditarOcupacionComponent } from './administracion/ocupacion
     DiscapacidadesComponent,
     VentanaCrearEditarDiscapacidadComponent,
     OcupacionesComponent,
-    VentanaCrearEditarOcupacionComponent
+    VentanaCrearEditarOcupacionComponent,
+    MateriasComponent,
+    VentanaCrearEditarMateriaComponent,
+    TiposTelefonosComponent,
+    VentanaCrearEditarTipoTelefonoComponent,
+    EpsComponent,
+    VentanaCrearEditarEpsComponent,
+    ParentescosComponent,
+    VentanaCrearEditarParentescoComponent,
+    FrecuenciasComponent,
+    VentanaCrearEditarFrecuenciaComponent,
+    DistanciasComponent,
+    VentanaCrearEditarDistanciaComponent,
+    EntidadesEducativasComponent,
+    VentanaCrearEditarEntidadEducativaComponent,
+    JornadasComponent,
+    VentanaCrearEditarJornadaComponent,
+    CargosComponent,
+    VentanaCrearEditarCargoComponent,
+    GradosComponent,
+    VentanaCrearEditarGradoComponent,
+    DependenciasComponent,
+    VentanaCrearEditarDependenciaComponent,
+    SedesComponent,
+    VentanaCrearEditarSedeComponent
   ],
   imports: [
     ReactiveFormsModule,

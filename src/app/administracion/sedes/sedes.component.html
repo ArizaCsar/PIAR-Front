@@ -1,0 +1,40 @@
+<app-plantilla>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Sedes</mat-card-title>
+        <button mat-mini-fab color="primary" class="icono-acciones" align="end" (click)="agregar()" title="Nueva sede">
+          <mat-icon>add</mat-icon>
+        </button>
+      </mat-card-header>
+      <mat-card-content>
+        <table mat-table [dataSource]="obtenerSedes$ | async" class="mat-elevation-z8 tabla-crud">
+  
+          <ng-container matColumnDef="codigoSede">
+            <th mat-header-cell *matHeaderCellDef> Código </th>
+            <td mat-cell *matCellDef="let element"> {{element.codigoSede}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="descripcionSede">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.descripcionSede}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="acciones">
+            <th mat-header-cell *matHeaderCellDef> Acciones </th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-mini-fab color="primary" class="icono-acciones" (click)="editar(element.codigoSede)" title="Editar sede">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-mini-fab color="warn" class="icono-acciones" (click)="eliminar(element.codigoSede)" title="Eliminar sede">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="['codigoSede', 'descripcionSede', 'acciones']"></tr>
+          <tr mat-row *matRowDef="let row; columns: ['codigoSede', 'descripcionSede', 'acciones'];"></tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+  </app-plantilla>
+  

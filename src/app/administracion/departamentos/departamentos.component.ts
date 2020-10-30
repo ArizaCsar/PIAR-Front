@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { VentanaConfirmacionComponent } from 'src/app/core/ventana-confirmacion/ventana-confirmacion.component';
 import { Departamento } from 'src/app/models/departamento.model';
 import { AdministracionService } from '../administracion.service';
 import { VentanaCrearEditarDepartamentoComponent } from './ventana-crear-editar-departamento/ventana-crear-editar-departamento.component';
@@ -97,7 +98,7 @@ export class DepartamentosComponent implements OnInit {
   }
 
   eliminar(codigoDepartamento: string) {
-    const dialogRef = this.dialog.open(VentanaCrearEditarDepartamentoComponent, {
+    const dialogRef = this.dialog.open(VentanaConfirmacionComponent, {
       width: '350px',
       data: { tipoDato: 'departamento' }
     });

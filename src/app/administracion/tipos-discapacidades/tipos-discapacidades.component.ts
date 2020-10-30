@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { VentanaConfirmacionTipoIdComponent } from 'src/app/core/ventana-confirmacion-tipo-id/ventana-confirmacion-tipo-id.component';
+import { VentanaConfirmacionComponent } from 'src/app/core/ventana-confirmacion/ventana-confirmacion.component';
 import { TipoDiscapacidad } from 'src/app/models/tipo_discapacidad';
 import { AdministracionService } from '../administracion.service';
 import { VentanaCrearEditarTiposIdentificacionComponent } from '../tipos-identificacion/ventana-crear-editar-tipos-identificacion/ventana-crear-editar-tipos-identificacion.component';
@@ -97,7 +97,7 @@ export class TiposDiscapacidadesComponent implements OnInit {
   }
 
   eliminar(codigoTipoDiscapacidad: number) {
-    const dialogRef = this.dialog.open(VentanaConfirmacionTipoIdComponent, {
+    const dialogRef = this.dialog.open(VentanaConfirmacionComponent, {
       width: '350px',
       data: { tipoDato: 'tipoDiscapacidad' }
     });

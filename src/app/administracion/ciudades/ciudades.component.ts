@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { VentanaConfirmacionCiudadComponent } from 'src/app/core/ventana-confirmacion-ciudad/ventana-confirmacion-ciudad.component';
+import { VentanaConfirmacionComponent } from 'src/app/core/ventana-confirmacion/ventana-confirmacion.component';
 import { Ciudad } from 'src/app/models/ciudad';
 import { AdministracionService } from '../administracion.service';
 import { VentanaCrearEditarCiudadComponent } from './ventana-crear-editar-ciudad/ventana-crear-editar-ciudad.component';
@@ -97,7 +97,7 @@ export class CiudadesComponent implements OnInit {
   }
 
   eliminar(codigoCiudad: string) {
-    const dialogRef = this.dialog.open(VentanaConfirmacionCiudadComponent, {
+    const dialogRef = this.dialog.open(VentanaConfirmacionComponent, {
       width: '350px',
       data: { tipoDato: 'ciudad' }
     });

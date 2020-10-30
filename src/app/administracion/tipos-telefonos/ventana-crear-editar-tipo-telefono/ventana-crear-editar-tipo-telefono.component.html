@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>
+    <ng-container *ngIf="data.accion === 'nuevo'">Agregar</ng-container>
+    <ng-container *ngIf="data.accion === 'editar'">Actualizar</ng-container>
+  </h1>
+  <div mat-dialog-content>
+    <form [formGroup]="tipoTelefonoForm">
+      <p>
+        <ng-container *ngIf="data.accion === 'nuevo'">Ingrese los datos del nuevo tipo de telefono</ng-container>
+        <ng-container *ngIf="data.accion === 'editar'">Ingrese el nombre del tipo de telefono</ng-container>
+      </p>
+      <p>
+        <mat-form-field appearance="outline" *ngIf="data.accion==='nuevo'">
+          <mat-label>Código</mat-label>
+          <input matInput formControlName="codigoTipoTelefono" />
+          <mat-error *ngIf="checkError('codigoTipoTelefono', 'required')">Por favor el código del tipo de telefono</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Tipo de telefono</mat-label>
+          <input matInput formControlName="descripcionTipoTelefono" />
+          <mat-error *ngIf="checkError('descripcionTipoTelefono', 'required')">Por favor ingrese nombre del tipo de telefono</mat-error>
+        </mat-form-field>
+        
+      </p>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+      <button mat-raised-button color="primary" cdkFocusInitial (click)="aceptar()"
+      [disabled]="tipoTelefonoForm.invalid">Aceptar</button>
+    <button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
+  </div>
+  

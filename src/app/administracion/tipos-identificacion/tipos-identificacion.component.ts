@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { VentanaConfirmacionComponent } from 'src/app/core/ventana-confirmacion/ventana-confirmacion.component';
 import { TipoId } from 'src/app/models/tipo_identificacion';
 import { AdministracionService } from '../administracion.service';
 import { VentanaCrearEditarTiposIdentificacionComponent } from './ventana-crear-editar-tipos-identificacion/ventana-crear-editar-tipos-identificacion.component';
@@ -95,7 +96,7 @@ export class TiposIdentificacionComponent implements OnInit {
   }
 
   eliminar(codigoTipoId: number) {
-    const dialogRef = this.dialog.open(VentanaCrearEditarTiposIdentificacionComponent, {
+    const dialogRef = this.dialog.open(VentanaConfirmacionComponent, {
       width: '350px',
       data: { tipoDato: 'tipoId' }
     });
