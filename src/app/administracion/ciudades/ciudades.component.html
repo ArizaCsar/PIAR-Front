@@ -19,6 +19,11 @@
           <td mat-cell *matCellDef="let element"> {{element.descripcionCiudad}} </td>
         </ng-container>
 
+        <ng-container matColumnDef="descripcionDepartamento">
+          <th mat-header-cell *matHeaderCellDef> Departamento </th>
+          <td mat-cell *matCellDef="let element"> {{element.departamento.descripcionDepartamento}} </td>
+        </ng-container>
+
         <ng-container matColumnDef="acciones">
           <th mat-header-cell *matHeaderCellDef> Acciones </th>
           <td mat-cell *matCellDef="let element">
@@ -31,8 +36,8 @@
           </td>
         </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="['codigoCiudad', 'descripcionCiudad', 'acciones']"></tr>
-        <tr mat-row *matRowDef="let row; columns: ['codigoCiudad', 'descripcionCiudad', 'acciones'];"></tr>
+        <tr mat-header-row *matHeaderRowDef="['codigoCiudad', 'descripcionCiudad', 'descripcionDepartamento', 'acciones']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['codigoCiudad', 'descripcionCiudad', 'descripcionDepartamento', 'acciones'];"></tr>
       </table>
     </mat-card-content>
   </mat-card>

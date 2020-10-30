@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { Ciudad } from '../models/ciudad';
 import { Departamento } from '../models/departamento.model';
 import { Pais } from '../models/pais.model';
+import { TipoId } from '../models/tipo_identificacion';
+
 
 @Injectable({
   providedIn: 'root'
@@ -78,5 +80,26 @@ export class AdministracionService {
     return this.http.delete(this.basePath + 'ciudad/' + codigoCiudad);
   }
 
+  /* Tipos Identificacion */
+
+  obtenerTiposId() : Observable<TipoId[]> {
+    return this.http.get<TipoId[]>(this.basePath + 'tiposId');
+  }
+
+  obtenerTipoId(codigoTipoId: number): Observable<TipoId> {
+    return this.http.get<TipoId>(this.basePath + 'tipoId/' + codigoTipoId);
+  }
+
+  agregarTipoId(nuevoTipoId: TipoId) {
+    return this.http.post<TipoId>(this.basePath + 'tipoId', nuevoTipoId);
+  }
+
+  editarTipoId(codigoTipoId: number, descripcionTipoId: number) {
+    return this.http.put(this.basePath + 'tipoId/' + codigoTipoId, { descripcionTipoId: descripcionTipoId});
+  }
+
+  eliminarTipoId(codigoTipoId: number) {
+    return this.http.delete(this.basePath + 'tipoId/' + codigoTipoId);
+  }
 
 }

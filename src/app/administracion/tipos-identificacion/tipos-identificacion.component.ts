@@ -3,19 +3,17 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { VentanaConfirmacionCiudadComponent } from 'src/app/core/ventana-confirmacion-ciudad/ventana-confirmacion-ciudad.component';
-import { Ciudad } from 'src/app/models/ciudad';
+import { TipoId } from 'src/app/models/tipo_identificacion';
 import { AdministracionService } from '../administracion.service';
-import { VentanaCrearEditarCiudadComponent } from './ventana-crear-editar-ciudad/ventana-crear-editar-ciudad.component';
-
+import { VentanaCrearEditarTiposIdentificacionComponent } from './ventana-crear-editar-tipos-identificacion/ventana-crear-editar-tipos-identificacion.component';
 
 @Component({
-  selector: 'app-ciudades',
-  templateUrl: './ciudades.component.html',
-  styleUrls: ['./ciudades.component.scss']
+  selector: 'app-tipos-identificacion',
+  templateUrl: './tipos-identificacion.component.html',
+  styleUrls: ['./tipos-identificacion.component.scss']
 })
-export class CiudadesComponent implements OnInit {
-  obtenerCiudades$: Observable<Ciudad[]>;
+export class TiposIdentificacionComponent implements OnInit {
+  obtenerTiposId$: Observable<TipoId[]>;
 
   constructor(
     private adminService: AdministracionService,
@@ -23,30 +21,30 @@ export class CiudadesComponent implements OnInit {
     public snackBar: MatSnackBar
   ) { }
 
-  private _cargarCiudades() {
-    this.obtenerCiudades$ = this.adminService.obtenerCiudades();
+  private _cargarTiposId() {
+    this.obtenerTiposId$ = this.adminService.obtenerTiposId();
   }
 
   ngOnInit(): void {
-    this._cargarCiudades();
+    this._cargarTiposId();
   }
 
   agregar() {
-    const nuevoRef = this.dialog.open(VentanaCrearEditarCiudadComponent, {
+    const nuevoRef = this.dialog.open(VentanaCrearEditarTiposIdentificacionComponent, {
       width: '450px',
       data: { accion: 'nuevo' }
     });
 
     nuevoRef.afterClosed().subscribe(creacion => {
       if (creacion) {
-        this.adminService.agregarCiudad(creacion).subscribe(
+        this.adminService.agregarTipoId(creacion).subscribe(
           (editar: any) => {
             this.snackBar.open('Registro creado correctamente', null, {
               duration: 3000,
               horizontalPosition: 'right',
               panelClass: 'successMessage'
             });
-            this._cargarCiudades();
+            this._cargarTiposId();
           },
           (fail: any) => {
             this.snackBar.open(fail.error.message, null, {
@@ -60,24 +58,24 @@ export class CiudadesComponent implements OnInit {
     });
   }
 
-  editar(codigoCiudad: string) {
-    this.adminService.obtenerCiudad(codigoCiudad).subscribe(
-      (ciudad: Ciudad) => {
-        const editarRef = this.dialog.open(VentanaCrearEditarCiudadComponent, {
+  editar(codigoTipoId: number) {
+    this.adminService.obtenerTipoId(codigoTipoId).subscribe(
+      (tipoId: TipoId) => {
+        const editarRef = this.dialog.open(VentanaCrearEditarTiposIdentificacionComponent, {
           width: '450px',
-          data: { ciudad: ciudad, accion: 'editar' }
+          data: { tipoId: tipoId, accion: 'editar' }
         });
 
         editarRef.afterClosed().subscribe(edicion => {
           if (edicion) {
-            this.adminService.editarPais(codigoCiudad, edicion.descripcionCiudad).subscribe(
+            this.adminService.editarTipoId(codigoTipoId, edicion.descripcionTipoId).subscribe(
               (editar: any) => {
                 this.snackBar.open('Registro actualizado correctamente', null, {
                   duration: 3000,
                   horizontalPosition: 'right',
                   panelClass: 'successMessage'
                 });
-                this._cargarCiudades();
+                this._cargarTiposId();
               },
               (fail: any) => {
                 this.snackBar.open(fail.error.message, null, {
@@ -96,19 +94,19 @@ export class CiudadesComponent implements OnInit {
     );
   }
 
-  eliminar(codigoCiudad: string) {
-    const dialogRef = this.dialog.open(VentanaConfirmacionCiudadComponent, {
+  eliminar(codigoTipoId: number) {
+    const dialogRef = this.dialog.open(VentanaCrearEditarTiposIdentificacionComponent, {
       width: '350px',
-      data: { tipoDato: 'ciudad' }
+      data: { tipoDato: 'tipoId' }
     });
 
     dialogRef.afterClosed().subscribe(confirmacion => {
       if (confirmacion) {
-        this.adminService.eliminarCiudad(codigoCiudad)
+        this.adminService.eliminarTipoId(codigoTipoId)
           .pipe(
             switchMap((respuestaBorrado: any) => {
               if (respuestaBorrado) {
-                this._cargarCiudades();
+                this._cargarTiposId();
               }
               return respuestaBorrado;
             })
