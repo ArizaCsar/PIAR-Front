@@ -22,6 +22,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
 
 
 import { AuthenticationService } from './login/shared/authentication.service';
@@ -75,6 +77,7 @@ import { VentanaCrearEditarDependenciaComponent } from './administracion/depende
 import { SedesComponent } from './administracion/sedes/sedes.component';
 import { VentanaCrearEditarSedeComponent } from './administracion/sedes/ventana-crear-editar-sede/ventana-crear-editar-sede.component';
 
+>>>>>>> 3298c104b0627e0004a8ac93fb357898e65aba6f
 
 
 
@@ -153,6 +156,8 @@ import { VentanaCrearEditarSedeComponent } from './administracion/sedes/ventana-
     MatListModule,
     MatTableModule,
     MatDialogModule,
+    MatSelectModule,
+    MatRadioModule,
   ],
   providers: [AuthorizatedGuard, AuthenticationService, StorageService],
   entryComponents: [VentanaConfirmacionComponent, VentanaCrearEditarPaisComponent],

@@ -42,26 +42,494 @@
       <mat-card-content>
 
         <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>Nombres</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>Apellidos</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>Lugar de nacimiento:</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-4">
+          <mat-label>Edad</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-4">
           <mat-label>Fecha</mat-label>
           <input matInput [matDatepicker]="picker2" />
           <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
           <mat-datepicker #picker2></mat-datepicker>
         </mat-form-field>
 
-        <mat-form-field appearance="outline" class="grid-2">
-          <mat-label>Lugar</mat-label>
+        <mat-form-field appearance="outline"      class="grid-4">
+          <mat-label>Tipo de documento</mat-label>
+          <select matNativeControl required>
+            <option value=1>Cédula</option>
+            <option value=2>Registro civil</option>
+            <option value=3>Otro</option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-4">
+          <mat-label>¿Cuál?</mat-label>
           <input matInput />
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="grid-2">
-          <mat-label>Nombre</mat-label>
+          <mat-label>Número de identificación</mat-label>
           <input matInput />
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="grid-2">
-          <mat-label>Rol que desempeña en la SE o IE</mat-label>
+          <mat-label>Departamento donde vive</mat-label>
           <input matInput />
         </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>Municipio</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>Dirección de vivienda</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>Barrio o vereda</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-4">
+          <mat-label>Teléfono</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-5" >
+          <mat-label>Correo electrónico</mat-label>
+          <input type="email" matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-4">
+          <mat-label>¿Está en centro de protección?</mat-label>
+          <select matNativeControl required>
+            <option>Seleccione</option>
+            <option value="volvo">Sí</option>
+            <option value="saab">No</option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-4" >
+          <mat-label>¿Dónde?</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>Grado al que aspira ingresar</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-1">
+          <mat-label>
+            Nota: Si el estudiante no tiene registro civil debe
+            iniciarse la gestión con la familia y la registraduría
+          </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-1">
+          <mat-label>¿Se reconoce o pertenece a un grupo étnico? Indique cuál</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>¿Se reconoce como víctima del conflicto armado?</mat-label>
+          <select matNativeControl required>
+            <option>Seleccione</option>
+            <option value="volvo">Sí</option>
+            <option value="saab">No</option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>¿Cuenta con el respectivo registro?</mat-label>
+          <select matNativeControl required>
+            <option>Seleccione</option>
+            <option value="volvo">Sí</option>
+            <option value="saab">No</option>
+          </select>
+        </mat-form-field>
+
+      </mat-card-content>
+
+      <mat-card-header>
+        <mat-card-title>
+          Entorno de salud
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <mat-form-field appearance="outline" class="grid-3">
+          <mat-label>¿Afiliación al sistema de salud?</mat-label>
+          <select matNativeControl required>
+            <option>Seleccione</option>
+            <option value="volvo">Sí</option>
+            <option value="saab">No</option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-3">
+          <mat-label>EPS</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-3">
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" style="margin-right: 15%; margin-left: 10%;">Contributivo</mat-radio-button>
+            <mat-radio-button value="2" >Subsidiado</mat-radio-button>
+          </mat-radio-group>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-1">
+          <mat-label>Lugar donde le atienden en caso de emergencia: </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>¿El niño está siendo atendido por el sector salud?</mat-label>
+          <select matNativeControl required>
+            <option>Seleccione</option>
+            <option value=1>Sí</option>
+            <option value=2>No</option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>Frecuencia: </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>¿Tiene diagnóstico médico?</mat-label>
+          <select matNativeControl required>
+            <option>Seleccione</option>
+            <option value=1>Sí</option>
+            <option value=2>No</option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>¿Cuál?: </mat-label>
+          <input matInput />
+        </mat-form-field><mat-form-field appearance="outline" class="grid-2">
+          <mat-label>¿Cuál?: </mat-label>
+          <input matInput />
+        </mat-form-field><mat-form-field appearance="outline" class="grid-2">
+          <mat-label>¿Cuál?: </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-3">
+          <mat-label>¿El niño está asistiendo a terapia?</mat-label>
+          <select matNativeControl required>
+            <option>Seleccione</option>
+            <option value=1>Sí</option>
+            <option value=2>No</option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-3">
+          <mat-label>¿Cuál?: </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-3">
+          <mat-label>Frecuencia: </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-4">
+          <mat-label>¿Cuál?: </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-4">
+          <mat-label>Frecuencia: </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-4">
+          <mat-label>¿Cuál?: </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-4">
+          <mat-label>Frecuencia: </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>¿Actualmente recibe tratamiento médico por alguna enfermedad particular?</mat-label>
+          <select matNativeControl required>
+            <option>Seleccione</option>
+            <option value=1>Sí</option>
+            <option value=2>No</option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>¿Cuál?</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>¿Consume medicamentos?</mat-label>
+          <select matNativeControl required>
+            <option>Seleccione</option>
+            <option value=1>Sí</option>
+            <option value=2>No</option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>Frecuencia y horario: </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>¿Cuenta con productos de apoyo para favorecer su movilidad, comunicación e independencia?</mat-label>
+          <select matNativeControl required>
+            <option>Seleccione</option>
+            <option value=1>Sí</option>
+            <option value=2>No</option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>¿Cuales?</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+      </mat-card-content>
+
+      <mat-card-header>
+        <mat-card-title>
+          Entorno hogar
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+
+        <mat-form-field appearance="outline" class="grid-3">
+          <mat-label>Nombre de la madre: </mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-3">
+          <mat-label>Ocupación</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-3">
+          <mat-label>Nivel educativo alcanzado</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-3">
+          <mat-label>Nombre del padre</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-3">
+          <mat-label>Ocupación</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-3">
+          <mat-label>Nivel educativo alcanzado</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>Nombre del cuidador</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>Parentezco con el estudiante</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-3">
+          <mat-label>Nivel educativo cuidador</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-3">
+          <mat-label>Teléfono</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-3">
+          <mat-label>Correo electrónico</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-3">
+          <mat-label>Número de hermanos</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-3">
+          <mat-label>Lugar que ocupa</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-3">
+          <mat-label>Personas con quien vive</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-5">
+          <mat-label>¿Quienes apoyan la crianza del estudiante?</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-4">
+          <mat-label>¿Está bajo protección?</mat-label>
+          <select matNativeControl required>
+            <option>Seleccione</option>
+            <option value=1>Sí</option>
+            <option value=2>No</option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>¿La familia recibe algún subsidio de alguna entidad o institución?</mat-label>
+          <select matNativeControl required>
+            <option>Seleccione</option>
+            <option value=1>Sí</option>
+            <option value=2>No</option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>¿Cuál?</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+      </mat-card-content>
+
+      <mat-card-header>
+        <mat-card-title>
+          Entorno educativo:
+          Información de la trayectoria educativa
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+
+        <mat-form-field appearance="outline" class="grid-1">
+          <mat-label >¿Ha estado vinculado en otra institución educativa, fundación o modalidad educativa inicial?</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>¿No? ¿Por qué?</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>¿Sí? ¿Cuáles?</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-4">
+          <mat-label>Último grado cursado</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-4">
+          <mat-label>¿Aprobó?</mat-label>
+          <select matNativeControl required>
+            <option>Seleccione</option>
+            <option value=1>Sí</option>
+            <option value=2>No</option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>Observaciones: (Incluír motivos del cambio de la modalidad o de la institución educativa)</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-5">
+          <mat-label>¿Se recibe informe pedagógico cualitativo que describa el proceso de desarrollo y a prendizaje del estudiante y/o PIAR?</mat-label>
+          <select matNativeControl required>
+            <option>Seleccione</option>
+            <option value=1>Sí</option>
+            <option value=2>No</option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-4">
+          <mat-label>¿De qué institución o modalidad proviene el informe?</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>¿Está asistiendo en la actualidad a programas complementarios?</mat-label>
+          <select matNativeControl required>
+            <option>Seleccione</option>
+            <option value=1>Sí</option>
+            <option value=2>No</option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>¿Cuáles? (Ej: Deportes, danzas, música, pintura, recreación, otros cursos)</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+      </mat-card-content>
+
+      <mat-card-header>
+        <mat-card-title>
+          Información de la institución educativa en la que se matricula:
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>Nombre de la institución educativa a la que se matricula:</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>Sede:</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>Medio que usará el estudiante para transportarse a la institución educativa</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="grid-2">
+          <mat-label>Distancia entre la institución educativa o sede  y el hogar del estudiante (Tiempo)</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        
 
       </mat-card-content>
     </mat-card>
