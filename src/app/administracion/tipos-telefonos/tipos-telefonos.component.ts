@@ -4,7 +4,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { VentanaConfirmacionComponent } from 'src/app/core/ventana-confirmacion/ventana-confirmacion.component';
-import { Pais } from 'src/app/models/pais.model';
 import { TipoTelefono } from 'src/app/models/tipo_telefono';
 import { AdministracionService } from '../administracion.service';
 import { VentanaCrearEditarTipoTelefonoComponent } from './ventana-crear-editar-tipo-telefono/ventana-crear-editar-tipo-telefono.component';

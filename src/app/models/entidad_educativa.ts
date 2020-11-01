@@ -1,4 +1,8 @@
+import { Sede } from './sede';
+
 export interface EntidadEducativa {
     codigoEntidadEducativa: number;
-    descripcionEntidadEducativa: string;
+    nombreEntidadEducativa: string;
+    codigoSede: number;
+    sede: Sede | any;
   }

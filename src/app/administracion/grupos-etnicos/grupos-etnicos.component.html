@@ -2,7 +2,7 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title>Grupos étnicos</mat-card-title>
-        <button mat-mini-fab color="primary" class="icono-acciones" align="end" (click)="agregar()" title="Nuevo grupo etnico">
+        <button mat-mini-fab color="primary" class="icono-acciones" align="end" (click)="agregar()" title="Nuevo grupo étnico">
           <mat-icon>add</mat-icon>
         </button>
       </mat-card-header>
@@ -22,10 +22,10 @@
           <ng-container matColumnDef="acciones">
             <th mat-header-cell *matHeaderCellDef> Acciones </th>
             <td mat-cell *matCellDef="let element">
-              <button mat-mini-fab color="primary" class="icono-acciones" (click)="editar(element.codigoGrupoEtnico)" title="Editar grupo etnico">
+              <button mat-mini-fab color="primary" class="icono-acciones" (click)="editar(element.codigoGrupoEtnico)" title="Editar grupo étnico">
                 <mat-icon>edit</mat-icon>
               </button>
-              <button mat-mini-fab color="warn" class="icono-acciones" (click)="eliminar(element.codigoGrupoEtnico)" title="Eliminar grupo etnico">
+              <button mat-mini-fab color="warn" class="icono-acciones" (click)="eliminar(element.codigoGrupoEtnico)" title="Eliminar grupo étnico">
                 <mat-icon>delete</mat-icon>
               </button>
             </td>

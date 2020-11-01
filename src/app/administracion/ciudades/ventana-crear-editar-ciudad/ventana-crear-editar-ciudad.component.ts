@@ -22,13 +22,13 @@ export class VentanaCrearEditarCiudadComponent implements OnInit {
 
   ngOnInit(): void {
     this.ciudadForm = this.fb.group({
-      codigoPais: ['', Validators.required],
-      descripcionPais: ['', Validators.required]
+      codigoCiudad: ['', Validators.required],
+      descripcionCiudad: ['', Validators.required]
     });
 
     if (this.data.accion === 'editar') {
       this.ciudadForm.removeControl('codigoCiudad');
-      this.ciudadForm.get('descripcionCiudad').setValue(this.data.pais.descripcionCiudad);
+      this.ciudadForm.get('descripcionCiudad').setValue(this.data.ciudad.descripcionCiudad);
       this.ciudadForm.updateValueAndValidity();
     }
   }

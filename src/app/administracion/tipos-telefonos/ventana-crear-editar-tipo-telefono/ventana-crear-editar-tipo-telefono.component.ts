@@ -23,8 +23,8 @@ export class VentanaCrearEditarTipoTelefonoComponent implements OnInit {
 
   ngOnInit(): void {
     this.tipoTelefonoForm = this.fb.group({
-      codigoPais: ['', Validators.required],
-      descripcionPais: ['', Validators.required]
+      codigoTipoTelefono: ['', Validators.required],
+      descripcionTipoTelefono: ['', Validators.required]
     });
 
     if (this.data.accion === 'editar') {

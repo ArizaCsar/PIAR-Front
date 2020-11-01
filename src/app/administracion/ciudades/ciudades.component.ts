@@ -70,7 +70,7 @@ export class CiudadesComponent implements OnInit {
 
         editarRef.afterClosed().subscribe(edicion => {
           if (edicion) {
-            this.adminService.editarPais(codigoCiudad, edicion.descripcionCiudad).subscribe(
+            this.adminService.editarCiudad(codigoCiudad, edicion.descripcionCiudad).subscribe(
               (editar: any) => {
                 this.snackBar.open('Registro actualizado correctamente', null, {
                   duration: 3000,

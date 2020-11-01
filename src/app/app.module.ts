@@ -77,7 +77,7 @@ import { VentanaCrearEditarDependenciaComponent } from './administracion/depende
 import { SedesComponent } from './administracion/sedes/sedes.component';
 import { VentanaCrearEditarSedeComponent } from './administracion/sedes/ventana-crear-editar-sede/ventana-crear-editar-sede.component';
 
->>>>>>> 3298c104b0627e0004a8ac93fb357898e65aba6f
+/* >>>>>>> 3298c104b0627e0004a8ac93fb357898e65aba6f */
 
 
 

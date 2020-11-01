@@ -11,14 +11,14 @@
       <p>
         <mat-form-field appearance="outline" *ngIf="data.accion==='nuevo'">
           <mat-label>Código</mat-label>
-          <input matInput formControlName="codigoPais" />
-          <mat-error *ngIf="checkError('codigoPais', 'required')">Por favor el código del país</mat-error>
+          <input matInput formControlName="codigoCiudad" />
+          <mat-error *ngIf="checkError('codigoCiudad', 'required')">Por favor el código de la ciudad</mat-error>
         </mat-form-field>
   
         <mat-form-field appearance="outline">
           <mat-label>Ciudad</mat-label>
-          <input matInput formControlName="descripcionPais" />
-          <mat-error *ngIf="checkError('descripcionPais', 'required')">Por favor ingrese nombre del país</mat-error>
+          <input matInput formControlName="descripcionCiudad" />
+          <mat-error *ngIf="checkError('descripcionCiudad', 'required')">Por favor ingrese nombre de la ciudad</mat-error>
         </mat-form-field>
         
       </p>

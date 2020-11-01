@@ -100,7 +100,7 @@ export class DistanciasComponent implements OnInit {
   eliminar(codigoDistancia: number) {
     const dialogRef = this.dialog.open(VentanaConfirmacionComponent, {
       width: '350px',
-      data: { tipoDato: 'pais' }
+      data: { tipoDato: 'distancia' }
     });
 
     dialogRef.afterClosed().subscribe(confirmacion => {

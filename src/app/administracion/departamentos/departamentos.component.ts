@@ -40,7 +40,7 @@ export class DepartamentosComponent implements OnInit {
 
     nuevoRef.afterClosed().subscribe(creacion => {
       if (creacion) {
-        this.adminService.agregarPais(creacion).subscribe(
+        this.adminService.agregarDepartamento(creacion).subscribe(
           (editar: any) => {
             this.snackBar.open('Registro creado correctamente', null, {
               duration: 3000,
@@ -71,7 +71,7 @@ export class DepartamentosComponent implements OnInit {
 
         editarRef.afterClosed().subscribe(edicion => {
           if (edicion) {
-            this.adminService.editarPais(codigoDepartamento, edicion.codigoDepartamento).subscribe(
+            this.adminService.editarDepartamento(codigoDepartamento, edicion.codigoDepartamento).subscribe(
               (editar: any) => {
                 this.snackBar.open('Registro actualizado correctamente', null, {
                   duration: 3000,

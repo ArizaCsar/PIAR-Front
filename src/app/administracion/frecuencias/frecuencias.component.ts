@@ -99,7 +99,7 @@ export class FrecuenciasComponent implements OnInit {
   eliminar(codigoFrecuencia: string) {
     const dialogRef = this.dialog.open(VentanaConfirmacionComponent, {
       width: '350px',
-      data: { tipoDato: 'ciudad' }
+      data: { tipoDato: 'frecuencia' }
     });
 
     dialogRef.afterClosed().subscribe(confirmacion => {

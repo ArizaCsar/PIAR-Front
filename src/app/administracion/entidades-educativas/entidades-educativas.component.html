@@ -2,7 +2,7 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title>Entidades educativas</mat-card-title>
-        <button mat-mini-fab color="primary" class="icono-acciones" align="end" (click)="agregar()" title="Nuevo país">
+        <button mat-mini-fab color="primary" class="icono-acciones" align="end" (click)="agregar()" title="Nueva entidad educativa">
           <mat-icon>add</mat-icon>
         </button>
       </mat-card-header>
@@ -18,6 +18,21 @@
             <th mat-header-cell *matHeaderCellDef> Nombre </th>
             <td mat-cell *matCellDef="let element"> {{element.nombreEntidadEducativa}} </td>
           </ng-container>
+
+          <ng-container matColumnDef="principal">
+            <th mat-header-cell *matHeaderCellDef> Principal </th>
+            <td mat-cell *matCellDef="let element"> {{element.principal}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="descripcionSede">
+            <th mat-header-cell *matHeaderCellDef> Sede </th>
+            <td mat-cell *matCellDef="let element"> {{element.sede.descripcionSede}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="descripcionJornada">
+            <th mat-header-cell *matHeaderCellDef> Jornada </th>
+            <td mat-cell *matCellDef="let element"> {{element.jornada.descripcionJornada}} </td>
+          </ng-container>
   
           <ng-container matColumnDef="acciones">
             <th mat-header-cell *matHeaderCellDef> Acciones </th>
@@ -25,14 +40,14 @@
               <button mat-mini-fab color="primary" class="icono-acciones" (click)="editar(element.codigoEntidadEducativa)" title="Editar entidad educativa">
                 <mat-icon>edit</mat-icon>
               </button>
-              <button mat-mini-fab color="warn" class="icono-acciones" (click)="eliminar(element.codigoEntidadEducativa)" title="Eliminar país">
+              <button mat-mini-fab color="warn" class="icono-acciones" (click)="eliminar(element.codigoEntidadEducativa)" title="Eliminar entidad educativa">
                 <mat-icon>delete</mat-icon>
               </button>
             </td>
           </ng-container>
   
-          <tr mat-header-row *matHeaderRowDef="['codigoEntidadEducativa', 'nombreEntidadEducativa', 'acciones']"></tr>
-          <tr mat-row *matRowDef="let row; columns: ['codigoEntidadEducativa', 'nombreEntidadEducativa', 'acciones'];"></tr>
+          <tr mat-header-row *matHeaderRowDef="['codigoEntidadEducativa', 'nombreEntidadEducativa', 'principal', 'descripcionSede', 'descripcionJornada','acciones']"></tr>
+          <tr mat-row *matRowDef="let row; columns: ['codigoEntidadEducativa', 'nombreEntidadEducativa', 'principal', 'descripcionSede', 'descripcionJornada', 'acciones'];"></tr>
         </table>
       </mat-card-content>
     </mat-card>
